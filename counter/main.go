@@ -103,7 +103,7 @@ func main() {
 	})
 
 	termChan := make(chan os.Signal, 1)
-	signal.Notify(termChan, syscall.SIGHUP)
+	signal.Notify(termChan, syscall.SIGINT, syscall.SIGTERM, syscall.SIGHUP)
 
 	for {
 		select {
